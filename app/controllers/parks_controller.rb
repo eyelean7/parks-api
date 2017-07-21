@@ -10,7 +10,7 @@ class ParksController < ApplicationController
   end
 
   def create
-    @park = Park.create(park_params)
+    @park = Park.create!(park_params)
     json_response(@park)
   end
 
