@@ -1,0 +1,925 @@
+Started GET "/quotes" for 127.0.0.1 at 2017-07-21 08:25:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/quotes"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 08:25:26 -0700
+Processing by ParksController#index as */*
+Completed 500 Internal Server Error in 202ms
+
+
+  
+ArgumentError (wrong number of arguments (1 for 0)):
+  
+app/controllers/parks_controller.rb:8:in `json_response'
+app/controllers/parks_controller.rb:4:in `index'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 08:26:51 -0700
+Processing by ParksController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+  [1m[35m (38.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6263387241463297680);[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateParks (20170721152813)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "parks" ("id" bigserial primary key, "park_name" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721152813"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 15:40:01.295648"], ["updated_at", "2017-07-21 15:40:01.295648"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6263387241463297680)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "LubowitzPark"], ["location", "New Jermey"], ["created_at", "2017-07-21 15:41:03.715140"], ["updated_at", "2017-07-21 15:41:03.715140"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "JakubowskiPark"], ["location", "North Charlotte"], ["created_at", "2017-07-21 15:41:03.718665"], ["updated_at", "2017-07-21 15:41:03.718665"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "HartmannPark"], ["location", "Tyriqueton"], ["created_at", "2017-07-21 15:41:03.721211"], ["updated_at", "2017-07-21 15:41:03.721211"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "CorwinPark"], ["location", "Casimirfort"], ["created_at", "2017-07-21 15:41:03.723848"], ["updated_at", "2017-07-21 15:41:03.723848"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "EffertzPark"], ["location", "New Kris"], ["created_at", "2017-07-21 15:41:03.726910"], ["updated_at", "2017-07-21 15:41:03.726910"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "BotsfordPark"], ["location", "Metzhaven"], ["created_at", "2017-07-21 15:41:03.729506"], ["updated_at", "2017-07-21 15:41:03.729506"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "NolanPark"], ["location", "Port Jena"], ["created_at", "2017-07-21 15:41:03.731949"], ["updated_at", "2017-07-21 15:41:03.731949"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "HagenesPark"], ["location", "Everettmouth"], ["created_at", "2017-07-21 15:41:03.734374"], ["updated_at", "2017-07-21 15:41:03.734374"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "MetzPark"], ["location", "South Thora"], ["created_at", "2017-07-21 15:41:03.736707"], ["updated_at", "2017-07-21 15:41:03.736707"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "DooleyPark"], ["location", "Port Derick"], ["created_at", "2017-07-21 15:41:03.739239"], ["updated_at", "2017-07-21 15:41:03.739239"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "WilkinsonPark"], ["location", "Kalebchester"], ["created_at", "2017-07-21 15:41:03.741776"], ["updated_at", "2017-07-21 15:41:03.741776"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "FeilPark"], ["location", "Predovichaven"], ["created_at", "2017-07-21 15:41:03.744039"], ["updated_at", "2017-07-21 15:41:03.744039"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "FisherPark"], ["location", "East Jeannemouth"], ["created_at", "2017-07-21 15:41:03.746262"], ["updated_at", "2017-07-21 15:41:03.746262"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "MetzPark"], ["location", "Weldonfort"], ["created_at", "2017-07-21 15:41:03.748391"], ["updated_at", "2017-07-21 15:41:03.748391"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "VonPark"], ["location", "East Stephonchester"], ["created_at", "2017-07-21 15:41:03.750591"], ["updated_at", "2017-07-21 15:41:03.750591"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "KundePark"], ["location", "Port Claudia"], ["created_at", "2017-07-21 15:41:03.752785"], ["updated_at", "2017-07-21 15:41:03.752785"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "WelchPark"], ["location", "Ashtonmouth"], ["created_at", "2017-07-21 15:41:03.755787"], ["updated_at", "2017-07-21 15:41:03.755787"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "HoegerPark"], ["location", "East Marianachester"], ["created_at", "2017-07-21 15:41:03.758407"], ["updated_at", "2017-07-21 15:41:03.758407"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "KuvalisPark"], ["location", "East Richardberg"], ["created_at", "2017-07-21 15:41:03.760843"], ["updated_at", "2017-07-21 15:41:03.760843"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "BorerPark"], ["location", "Lake Joyce"], ["created_at", "2017-07-21 15:41:03.763028"], ["updated_at", "2017-07-21 15:41:03.763028"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 08:43:25 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.7ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 4.9ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Hane Park"], ["location", "Lake Ignatius"], ["created_at", "2017-07-21 15:44:30.645152"], ["updated_at", "2017-07-21 15:44:30.645152"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Kiehn Park"], ["location", "Gibsonstad"], ["created_at", "2017-07-21 15:44:30.649068"], ["updated_at", "2017-07-21 15:44:30.649068"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Becker Park"], ["location", "Gulgowskifort"], ["created_at", "2017-07-21 15:44:30.653934"], ["updated_at", "2017-07-21 15:44:30.653934"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Jast Park"], ["location", "East Adrain"], ["created_at", "2017-07-21 15:44:30.656970"], ["updated_at", "2017-07-21 15:44:30.656970"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Johnson Park"], ["location", "Turnermouth"], ["created_at", "2017-07-21 15:44:30.659732"], ["updated_at", "2017-07-21 15:44:30.659732"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Smith Park"], ["location", "North Ebbaview"], ["created_at", "2017-07-21 15:44:30.662234"], ["updated_at", "2017-07-21 15:44:30.662234"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Hartmann Park"], ["location", "Schummbury"], ["created_at", "2017-07-21 15:44:30.664946"], ["updated_at", "2017-07-21 15:44:30.664946"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Herman Park"], ["location", "Arlenechester"], ["created_at", "2017-07-21 15:44:30.667315"], ["updated_at", "2017-07-21 15:44:30.667315"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Walter Park"], ["location", "East Elyse"], ["created_at", "2017-07-21 15:44:30.670280"], ["updated_at", "2017-07-21 15:44:30.670280"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Ferry Park"], ["location", "Kareemmouth"], ["created_at", "2017-07-21 15:44:30.672586"], ["updated_at", "2017-07-21 15:44:30.672586"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Hills Park"], ["location", "West Chasemouth"], ["created_at", "2017-07-21 15:44:30.675576"], ["updated_at", "2017-07-21 15:44:30.675576"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "McGlynn Park"], ["location", "Keonview"], ["created_at", "2017-07-21 15:44:30.678552"], ["updated_at", "2017-07-21 15:44:30.678552"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Nitzsche Park"], ["location", "Evangelineport"], ["created_at", "2017-07-21 15:44:30.681233"], ["updated_at", "2017-07-21 15:44:30.681233"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Turner Park"], ["location", "New Aracelyburgh"], ["created_at", "2017-07-21 15:44:30.684458"], ["updated_at", "2017-07-21 15:44:30.684458"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "O'Connell Park"], ["location", "Rebekahton"], ["created_at", "2017-07-21 15:44:30.688100"], ["updated_at", "2017-07-21 15:44:30.688100"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Greenholt Park"], ["location", "Port Kristianport"], ["created_at", "2017-07-21 15:44:30.690982"], ["updated_at", "2017-07-21 15:44:30.690982"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Bernhard Park"], ["location", "Port Odessa"], ["created_at", "2017-07-21 15:44:30.694311"], ["updated_at", "2017-07-21 15:44:30.694311"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Ryan Park"], ["location", "Lebsackfort"], ["created_at", "2017-07-21 15:44:30.696801"], ["updated_at", "2017-07-21 15:44:30.696801"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Steuber Park"], ["location", "Rickiechester"], ["created_at", "2017-07-21 15:44:30.699347"], ["updated_at", "2017-07-21 15:44:30.699347"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Nolan Park"], ["location", "Gleichnerborough"], ["created_at", "2017-07-21 15:44:30.701959"], ["updated_at", "2017-07-21 15:44:30.701959"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 08:44:33 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/parks/23" for 127.0.0.1 at 2017-07-21 08:46:43 -0700
+Processing by ParksController#show as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+Completed 204 No Content in 21ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/parks/23" for 127.0.0.1 at 2017-07-21 08:47:05 -0700
+Processing by ParksController#show as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 09:02:03 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (8.2ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 45ms (Views: 16.2ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:02:58 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 09:03:31 -0700
+Processing by ParksController#create as */*
+  [1m[35m (8.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "parks" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2017-07-21 16:03:31.972877"], ["updated_at", "2017-07-21 16:03:31.972877"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 15.4ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 09:04:25 -0700
+Processing by ParksController#create as */*
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2017-07-21 16:04:25.574704"], ["updated_at", "2017-07-21 16:04:25.574704"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 09:05:34 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Cal Anderson"], ["location", "Seattle"], ["created_at", "2017-07-21 16:05:34.494306"], ["updated_at", "2017-07-21 16:05:34.494306"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:05:42 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 09:06:00 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Cal Anderson"], ["location", "Seattle"], ["created_at", "2017-07-21 16:06:00.507990"], ["updated_at", "2017-07-21 16:06:00.507990"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 09:06:17 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Cal Anderson"], ["location", "Seattle"], ["created_at", "2017-07-21 16:06:17.630877"], ["updated_at", "2017-07-21 16:06:17.630877"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 09:12:12 -0700
+  
+SyntaxError (/Users/Ilene/Desktop/parks/app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/parks_controller.rb:28:in `<class:ParksController>'
+app/controllers/parks_controller.rb:1:in `<top (required)>'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:12:17 -0700
+  
+SyntaxError (/Users/Ilene/Desktop/parks/app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/parks_controller.rb:28:in `<class:ParksController>'
+app/controllers/parks_controller.rb:1:in `<top (required)>'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:12:33 -0700
+  
+SyntaxError (/Users/Ilene/Desktop/parks/app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/parks_controller.rb:2:in `<class:ParksController>'
+app/controllers/parks_controller.rb:1:in `<top (required)>'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:13:19 -0700
+  
+SyntaxError (/Users/Ilene/Desktop/parks/app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/parks_controller.rb:1:in `<top (required)>'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:13:36 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Ilene/Desktop/parks/app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/concerns/response.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/parks_controller.rb:1:in `<top (required)>'
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 09:14:07 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.7ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 28ms (Views: 17.2ms | ActiveRecord: 6.2ms)
+
+
+Started DELETE "/parks/23" for 127.0.0.1 at 2017-07-21 10:48:06 -0700
+Processing by ParksController#destroy as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle", "id"=>"23"}
+  [1m[36mPark Load (4.5ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 23]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 47ms (ActiveRecord: 15.0ms)
+
+
+Started DELETE "/parks/" for 127.0.0.1 at 2017-07-21 10:48:10 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 10:48:17 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/parks/1" for 127.0.0.1 at 2017-07-21 10:48:52 -0700
+Processing by ParksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Park with 'id'=1):
+  
+app/controllers/parks_controller.rb:8:in `show'
+Started GET "/parks/1" for 127.0.0.1 at 2017-07-21 10:49:39 -0700
+Processing by ParksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 55ms (Views: 0.5ms | ActiveRecord: 44.4ms)
+
+
+Started POST "/parks/" for 127.0.0.1 at 2017-07-21 10:52:51 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Cal Anderson"], ["location", "Seattle"], ["created_at", "2017-07-21 17:52:51.575056"], ["updated_at", "2017-07-21 17:52:51.575056"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/parks/" for 127.0.0.1 at 2017-07-21 10:54:50 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Cal Anderson"], ["location", "Seattle"], ["created_at", "2017-07-21 17:54:50.991754"], ["updated_at", "2017-07-21 17:54:50.991754"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 2.4ms)
+
+
+Started PUT "/parks/" for 127.0.0.1 at 2017-07-21 10:54:56 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/parks/" for 127.0.0.1 at 2017-07-21 10:54:59 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Cal Anderson"], ["location", "Seattle"], ["created_at", "2017-07-21 17:54:59.947168"], ["updated_at", "2017-07-21 17:54:59.947168"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 10:55:26 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 10:57:17 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"\"WIldwood\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 620ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/parks" for 127.0.0.1 at 2017-07-21 10:57:42 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/parks/48" for 127.0.0.1 at 2017-07-21 10:58:26 -0700
+Processing by ParksController#destroy as */*
+  Parameters: {"park_name"=>"Cal Anderson", "location"=>"Seattle", "id"=>"48"}
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 48]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 10:58:35 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.8ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/parks/" for 127.0.0.1 at 2017-07-21 10:58:57 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Wildwood", "location"=>"Bellevue"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Wildwood"], ["location", "Bellevue"], ["created_at", "2017-07-21 17:58:57.771017"], ["updated_at", "2017-07-21 17:58:57.771017"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 10:59:03 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.5ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 11:06:00 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"\"Gorski Park\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 24ms (ActiveRecord: 5.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Location can't be blank):
+  
+app/controllers/parks_controller.rb:13:in `create'
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 11:09:25 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"\"Malarkey Park\""}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 15ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/parks/24" for 127.0.0.1 at 2017-07-21 11:40:32 -0700
+Processing by ParksController#update as */*
+  Parameters: {"park_name"=>"\"Malarkey Park\"", "id"=>"24"}
+  [1m[36mPark Load (8.0ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[33mUPDATE "parks" SET "park_name" = $1, "updated_at" = $2 WHERE "parks"."id" = $3[0m  [["park_name", "\"Malarkey Park\""], ["updated_at", "2017-07-21 18:40:32.738010"], ["id", 24]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 56ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 11:40:42 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (1.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/parks" for 127.0.0.1 at 2017-07-21 11:41:36 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/parks/24" for 127.0.0.1 at 2017-07-21 11:41:42 -0700
+Processing by ParksController#update as */*
+  Parameters: {"park_name"=>"Malarkey Park", "id"=>"24"}
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "parks" SET "park_name" = $1, "updated_at" = $2 WHERE "parks"."id" = $3[0m  [["park_name", "Malarkey Park"], ["updated_at", "2017-07-21 18:41:42.609686"], ["id", 24]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 14ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 11:41:49 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.6ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/parks/" for 127.0.0.1 at 2017-07-21 11:42:15 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/parks/" for 127.0.0.1 at 2017-07-21 11:44:05 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/parks/" for 127.0.0.1 at 2017-07-21 11:44:23 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/parks/" for 127.0.0.1 at 2017-07-21 11:44:49 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/parks/" for 127.0.0.1 at 2017-07-21 11:45:20 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/parks"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/parks" for 127.0.0.1 at 2017-07-21 12:29:30 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Marymoore", "location"=>"Bellevue"}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Marymoore"], ["location", "Bellevue"], ["created_at", "2017-07-21 19:29:30.523683"], ["updated_at", "2017-07-21 19:29:30.523683"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 126ms (Views: 2.9ms | ActiveRecord: 54.2ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 12:59:41 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (7.7ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 62ms (Views: 46.6ms | ActiveRecord: 7.7ms)
+
+
+Started PATCH "/parks/21" for 127.0.0.1 at 2017-07-21 13:11:41 -0700
+Processing by ParksController#update as */*
+  Parameters: {"park_name"=>"Mack Park", "location"=>"Tohoma", "id"=>"21"}
+  [1m[36mPark Load (6.1ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.4ms)[0m  [1m[33mUPDATE "parks" SET "park_name" = $1, "location" = $2, "updated_at" = $3 WHERE "parks"."id" = $4[0m  [["park_name", "Mack Park"], ["location", "Tohoma"], ["updated_at", "2017-07-21 20:11:41.873744"], ["id", 21]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 64ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 13:11:55 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.7ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 26ms (Views: 16.6ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/parks/21" for 127.0.0.1 at 2017-07-21 13:12:33 -0700
+Processing by ParksController#update as */*
+  Parameters: {"park_name"=>"Uma Park", "location"=>"Vancouver", "id"=>"21"}
+  [1m[36mPark Load (0.4ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "parks" SET "park_name" = $1, "location" = $2, "updated_at" = $3 WHERE "parks"."id" = $4[0m  [["park_name", "Uma Park"], ["location", "Vancouver"], ["updated_at", "2017-07-21 20:12:33.792976"], ["id", 21]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 58ms (Views: 0.5ms | ActiveRecord: 33.0ms)
+
+
+Started DELETE "/parks/21" for 127.0.0.1 at 2017-07-21 13:15:01 -0700
+  
+SyntaxError (/Users/Ilene/Desktop/parks/app/controllers/parks_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/parks_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end
+Started DELETE "/parks/21" for 127.0.0.1 at 2017-07-21 13:15:24 -0700
+Processing by ParksController#destroy as */*
+  Parameters: {"park_name"=>"Uma Park", "location"=>"Vancouver", "id"=>"21"}
+  [1m[36mPark Load (0.3ms)[0m  [1m[34mSELECT  "parks".* FROM "parks" WHERE "parks"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "parks" WHERE "parks"."id" = $1[0m  [["id", 21]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/parks/" for 127.0.0.1 at 2017-07-21 13:18:39 -0700
+Processing by ParksController#create as */*
+  Parameters: {"park_name"=>"Uma Park", "location"=>"Vancouver"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "parks" ("park_name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["park_name", "Uma Park"], ["location", "Vancouver"], ["created_at", "2017-07-21 20:18:39.767310"], ["updated_at", "2017-07-21 20:18:39.767310"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 19ms (Views: 1.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/parks/" for 127.0.0.1 at 2017-07-21 13:18:52 -0700
+Processing by ParksController#index as */*
+  [1m[36mPark Load (0.9ms)[0m  [1m[34mSELECT "parks".* FROM "parks"[0m
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/parks/22" for 127.0.0.1 at 2017-07-21 13:19:03 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/parks/22"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/parks/22" for 127.0.0.1 at 2017-07-21 13:19:28 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/parks/22"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/parks/22" for 127.0.0.1 at 2017-07-21 13:20:42 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/parks/22"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/parks/22" for 127.0.0.1 at 2017-07-21 13:21:00 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/parks/22"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

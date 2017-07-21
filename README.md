@@ -5,20 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.2.4
 
-* System dependencies
+* Database creation postgres rake db:create rake db:migrate
 
-* Configuration
+* Deployment instructions bundle rails s postman GET localhost:3000/parks
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* To do: fix factory girl, refactor specs to include a module

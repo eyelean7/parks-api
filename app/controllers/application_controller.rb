@@ -6,4 +6,5 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordInvalid do |exception|
     json_response({message: exception.message }, :invalid)
   end
+
 end
