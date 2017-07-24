@@ -1,8 +1,13 @@
 class ParksController < ApplicationController
   def index
     park_name = params[:park_name]
+    location = params[:location]
     if params[:park_name]
       @parks = Park.where(park_name: park_name)
+    elsif params[:location]
+      @parks = Park.where(location: location)
+    elsif params[:random]
+      @parks = Park.all.sample
     else
       @parks = Park.all
     end
